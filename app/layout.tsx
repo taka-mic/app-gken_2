@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
-      <body className={`${geist.className} bg-gray-50 min-h-screen antialiased`}>
+    <html lang="ja" style={{ colorScheme: "light" }}>
+      <body className={`${geist.className} bg-gray-50 min-h-screen antialiased text-gray-900`}>
         <QuizProvider>
           <div className="mx-auto max-w-lg px-4 py-8">
             {children}
