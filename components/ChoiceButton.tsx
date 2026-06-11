@@ -23,20 +23,20 @@ export function ChoiceButton({ label, index, state, disabled, onClick }: ChoiceB
       className={clsx(
         "w-full flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-left text-sm font-semibold transition-all duration-200",
         state === "idle" &&
-          "border-gray-300 bg-white !text-gray-900 hover:border-indigo-500 hover:bg-indigo-50 hover:!text-indigo-900",
+          "border-gray-300 [background-color:#ffffff] [color:#111111] hover:border-indigo-500 hover:[background-color:#eef2ff] hover:[color:#1e1b4b]",
         state === "selected-correct" &&
-          "border-green-500 bg-green-50 !text-green-900",
+          "border-green-500 [background-color:#f0fdf4] [color:#14532d]",
         state === "selected-wrong" &&
-          "border-red-400 bg-red-50 !text-red-900",
+          "border-red-400 [background-color:#fff1f2] [color:#7f1d1d]",
         state === "correct-unselected" &&
-          "border-green-400 bg-green-50 !text-green-800",
+          "border-green-400 [background-color:#f0fdf4] [color:#166534]",
         disabled && state === "idle" && "opacity-70 cursor-not-allowed"
       )}
     >
       <span
         className={clsx(
           "flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold",
-          state === "idle" && "bg-indigo-100 text-indigo-700",
+          state === "idle" && "[background-color:#e0e7ff] [color:#3730a3]",
           state === "selected-correct" && "bg-green-500 text-white",
           state === "selected-wrong" && "bg-red-400 text-white",
           state === "correct-unselected" && "bg-green-400 text-white"

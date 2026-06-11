@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" style={{ colorScheme: "light" }}>
-      <body className={`${geist.className} bg-gray-50 min-h-screen antialiased text-gray-900`}>
+      <body className={`${geist.className} min-h-screen antialiased`} style={{ backgroundColor: "#f9fafb", color: "#111111" }}>
         <QuizProvider>
           <div className="mx-auto max-w-lg px-4 py-8">
             {children}

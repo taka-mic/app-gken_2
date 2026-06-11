@@ -92,8 +92,8 @@ export function QuizCard() {
       </div>
 
       {/* Question */}
-      <div className="rounded-2xl bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 p-5">
-        <p className="text-gray-800 text-base leading-relaxed font-medium">
+      <div className="rounded-2xl border border-indigo-100 p-5" style={{ background: "linear-gradient(135deg,#eef2ff,#ffffff)", color: "#1e1b4b" }}>
+        <p className="text-base leading-relaxed font-semibold" style={{ color: "#1e1b4b" }}>
           {currentQuestion.text}
         </p>
       </div>
