@@ -4,6 +4,7 @@ import { dlQuestions } from "./questions-dl";
 import { mathQuestions } from "./questions-math";
 import { mlQuestions } from "./questions-ml";
 import { lawQuestions } from "./questions-law";
+import { practicalQuestions } from "./questions-practical";
 
 export const questions: Question[] = [
   ...aiQuestions,
@@ -11,6 +12,7 @@ export const questions: Question[] = [
   ...mathQuestions,
   ...mlQuestions,
   ...lawQuestions,
+  ...practicalQuestions,
 ];
 
 export const questionsByCategory = questions.reduce(
