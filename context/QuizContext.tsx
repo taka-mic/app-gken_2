@@ -19,7 +19,7 @@ interface Stats {
 interface QuizContextValue {
   session: QuizSession | null;
   stats: Stats;
-  startSession: (categoryFilter?: string) => void;
+  startSession: (categoryFilter?: string, limit?: number) => void;
   submitAnswer: (selectedIndex: number, timeSpent: number) => void;
   nextQuestion: () => void;
   endSession: () => void;
@@ -53,12 +53,13 @@ export function QuizProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<QuizSession | null>(null);
   const [allAnswers, setAllAnswers] = useState<AnswerRecord[]>([]);
 
-  const startSession = useCallback((categoryFilter?: string) => {
+  const startSession = useCallback((categoryFilter?: string, limit?: number) => {
     const pool =
       categoryFilter
         ? allQuestions.filter((q) => q.category === categoryFilter)
         : allQuestions;
-    const questions = shuffle(pool);
+    const shuffled = shuffle(pool);
+    const questions = limit ? shuffled.slice(0, limit) : shuffled;
     setSession({
       questions,
       currentIndex: 0,
